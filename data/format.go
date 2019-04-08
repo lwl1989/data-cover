@@ -5,8 +5,11 @@ import (
     "io"
 )
 
+const ReceiverHeaderLen = 10
+const ReceiverEndLen  = 3
 //接受者頭部
 type ReceiverHeader struct {
+    EscCode [1]byte    //ASCII 27  0001 1011 033 27 0x1B
 	MessageLen  	[2]byte		//訊息長度
 	BizCate			[1]byte		//業務類別
 	TransferCode 	[1]byte    	//傳輸格式代碼
@@ -15,7 +18,6 @@ type ReceiverHeader struct {
 }
 //接受者
 type Receiver struct {
-	EscCode [1]byte    //ASCII 27  0001 1011 033 27 0x1B
 	Head 	ReceiverHeader
 	Body    ReceiverBody
 	End     ReceiverEnd
@@ -30,6 +32,8 @@ type ReceiverEnd struct {
 
 type ReceiverBody interface{
     ParseData()
+
+
 }
 
 
