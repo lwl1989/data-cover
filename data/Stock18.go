@@ -2,7 +2,7 @@ package data
 
 //like 12
 //header  cate 01  code 18  edition 02
-type Receiver18 struct {
+type FuturesReceiver18 struct {
 	BondNumber [1]byte  //bcd
 	ReceiveBondData []BondData
 }

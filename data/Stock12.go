@@ -2,7 +2,7 @@ package data
 
 
 //header  cate 01  code 12  edition 02
-type Receiver12 struct {
+type FuturesReceiver12 struct {
 	BondNumber [1]byte  //bcd
 	ReceiveBondData []BondData
 }

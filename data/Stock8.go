@@ -1,7 +1,7 @@
 package data
 
 //header  cate 01 code 08  edition 01
-type Receiver8 struct {
+type FuturesReceiver8 struct {
 	EntrustTime [3]byte
 
 	EntrustBuyStroke [4]byte

@@ -1,7 +1,7 @@
 package data
 
 //header  cate 01 code 07  edition 01
-type Receiver7 struct {
+type FuturesReceiver7 struct {
 	TimeFrame [3]byte
 
 	DealMoney [8]byte

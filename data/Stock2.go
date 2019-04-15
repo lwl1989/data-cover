@@ -3,7 +3,7 @@ package data
 //bcd
 //成交信息
 //header  cate 01  code 02  edition 02
-type Receiver2 struct {   //bcd all
+type FuturesReceiver2 struct {   //bcd all
 	TimeFrame [3]byte
 	AllDealMoney [8]byte
 	AllDealNumber [8]byte

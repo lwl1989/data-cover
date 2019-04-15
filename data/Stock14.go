@@ -2,7 +2,7 @@ package data
 
 
 //header  cate 01  code 14  edition 02
-type Receiver14 struct {
+type FuturesReceiver14 struct {
 	SubscriptionCode [6]byte   //ascii
 	SubscriptionName [50]byte
 }
