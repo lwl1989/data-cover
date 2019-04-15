@@ -5,10 +5,10 @@ import (
     "io"
 )
 
-const FuturesReceiverHeaderLen = 10
-const FuturesReceiverEndLen  = 3
+const StockReceiverHeaderLen = 10
+const StockReceiverEndLen  = 3
 //接受者頭部
-type FuturesReceiverHeader struct {
+type StockReceiverHeader struct {
     EscCode [1]byte    //ASCII 27  0001 1011 033 27 0x1B
 	MessageLen  	[2]byte		//訊息長度
 	BizCate			[1]byte		//業務類別
@@ -17,40 +17,40 @@ type FuturesReceiverHeader struct {
 	TransferNumber 	[4]byte   	//傳輸序號
 }
 //接受者
-type FuturesReceiver struct {
-	Head 	FuturesReceiverHeader
-	Body    FuturesReceiverBody
-	End     FuturesReceiverEnd
+type StockReceiver struct {
+	Head 	StockReceiverHeader
+	Body    StockReceiverBody
+	End     StockReceiverEnd
 
 	rc      io.ReadCloser
 }
 //接受者尾部
-type FuturesReceiverEnd struct {
+type StockReceiverEnd struct {
 	End     		[1]byte  //XOR值
 	TerminalCode 	[2]byte  //(HEXACODE：0D 0A)
 }
 
-type FuturesReceiverBody interface{
+type StockReceiverBody interface{
     ParseData()
 
 
 }
 
 
-func (re *FuturesReceiver) getBody() interface{} {
+func (re *StockReceiver) getBody() interface{} {
 	return re.Body
 }
 
-func (rh *FuturesReceiverHeader) getBodyLen() int {
+func (rh *StockReceiverHeader) getBodyLen() int {
     return cover.BcdToInt(rh.MessageLen[:])
 }
 
-func (rh *FuturesReceiverHeader) getBodyType() string {
+func (rh *StockReceiverHeader) getBodyType() string {
     return cover.BcdToString(rh.TransferCode[:])
 }
 
 
-func (re *FuturesReceiver) readBody() {
+func (re *StockReceiver) readBody() {
     l := re.Head.getBodyLen()
     if l > 0 {
         buf := make([]byte, l)
@@ -78,43 +78,43 @@ func (re *FuturesReceiver) readBody() {
 func GetFormatWithType(t string) interface{} {
     switch t {
     case "01":
-        return &FuturesReceiver1{}
+        return &StockReceiver1{}
     case "02":
-        return &FuturesReceiver2{}
+        return &StockReceiver2{}
     case "03":
-        return &FuturesReceiver3{}
+        return &StockReceiver3{}
     case "04":
-        return &FuturesReceiver4{}
+        return &StockReceiver4{}
     case "05":
-        return &FuturesReceiver5{}
+        return &StockReceiver5{}
     case "06":
-        return &FuturesReceiver6{}
+        return &StockReceiver6{}
     case "07":
-        return &FuturesReceiver7{}
+        return &StockReceiver7{}
     case "08":
-        return &FuturesReceiver8{}
+        return &StockReceiver8{}
     case "09":
-        return &FuturesReceiver9{}
+        return &StockReceiver9{}
     case "10":
-        return &FuturesReceiver10{}
+        return &StockReceiver10{}
     //case "11":
-    //    return &FuturesReceiver11{}
+    //    return &StockReceiver11{}
     case "12":
-        return &FuturesReceiver12{}
+        return &StockReceiver12{}
     case "13":
-        return &FuturesReceiver13{}
+        return &StockReceiver13{}
     case "14":
-        return &FuturesReceiver14{}
+        return &StockReceiver14{}
     case "15":
-        return &FuturesReceiver15{}
+        return &StockReceiver15{}
     //case "16":
-        //return &FuturesReceiver1{}
+        //return &StockReceiver1{}
     case "17":
-        return &FuturesReceiver17{}
+        return &StockReceiver17{}
     case "18":
-        return &FuturesReceiver18{}
+        return &StockReceiver18{}
     case "19":
-        return &FuturesReceiver19{}
+        return &StockReceiver19{}
     default:
         return nil
     }

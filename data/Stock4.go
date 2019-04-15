@@ -3,7 +3,7 @@ package data
 
 //委托交易信息  all bcd
 //header  cate 01  code 04  edition 02
-type FuturesReceiver4 struct {
+type StockReceiver4 struct {
 	EntrustTime  [3]byte
 
 	AllEntrustBuyStroke [4]byte

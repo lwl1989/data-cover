@@ -2,7 +2,7 @@ package data
 
 
 //header  cate 01  code 06  edition 02
-type FuturesReceiver9 struct {
+type StockReceiver9 struct {
 	StockCode  [6]byte //Ascii
 
 	MatchTime  [3]byte //bcd

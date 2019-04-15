@@ -2,7 +2,7 @@ package data
 
 //like 06
 //header  cate 01  code 17  edition 03
-type FuturesReceiver17 struct {
+type StockReceiver17 struct {
 	StockCode [6]byte  //ASCII
 
 	MatchTime [6]byte //bcd

@@ -1,7 +1,7 @@
 package data
 
 //header  cate 01  code 01  edition 07
-type FuturesReceiver1 struct {
+type StockReceiver1 struct {
 	ContentBody
 	WarrantData
 	ContentOther
