@@ -3,18 +3,19 @@ package data
 import (
     "github.com/lwl1989/data-cover/cover"
     "io"
+    "github.com/lwl1989/data-cover/types"
 )
 
 const StockReceiverHeaderLen = 10
 const StockReceiverEndLen  = 3
 //接受者頭部
 type StockReceiverHeader struct {
-    EscCode [1]byte    //ASCII 27  0001 1011 033 27 0x1B
-	MessageLen  	[2]byte		//訊息長度
-	BizCate			[1]byte		//業務類別
-	TransferCode 	[1]byte    	//傳輸格式代碼
-	TransferEdition [1]byte  	//傳輸格式版別
-	TransferNumber 	[4]byte   	//傳輸序號
+    EscCode [1]types.Ascii    //ASCII 27  0001 1011 033 27 0x1B
+	MessageLen  	[2]types.Bcd		//訊息長度
+	BizCate			[1]types.Bcd		//業務類別
+	TransferCode 	[1]types.Bcd    	//傳輸格式代碼
+	TransferEdition [1]types.Bcd  	//傳輸格式版別
+	TransferNumber 	[4]types.Bcd   	//傳輸序號
 }
 //接受者
 type StockReceiver struct {

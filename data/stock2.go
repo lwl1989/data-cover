@@ -1,28 +1,30 @@
 package data
 
+import "github.com/lwl1989/data-cover/types"
+
 //bcd
 //成交信息
 //header  cate 01  code 02  edition 02
 type StockReceiver2 struct {   //bcd all
-	TimeFrame [3]byte
-	AllDealMoney [8]byte
-	AllDealNumber [8]byte
-	AllDealStroke [5]byte
+	TimeFrame [3]types.Bcd
+	AllDealMoney [8]types.Bcd
+	AllDealNumber [8]types.Bcd
+	AllDealStroke [5]types.Bcd
 
-	FundDealMoney [8]byte
-	FundDealNumber [8]byte
-	FundDealStroke [5]byte
+	FundDealMoney [8]types.Bcd
+	FundDealNumber [8]types.Bcd
+	FundDealStroke [5]types.Bcd
 
-	StockDealMoney [8]byte
-	StockDealNumber [8]byte
-	StockDealStroke [5]byte
+	StockDealMoney [8]types.Bcd
+	StockDealNumber [8]types.Bcd
+	StockDealStroke [5]types.Bcd
 
-	SubscriptionMoney [8]byte
-	SubscriptionNumber [8]byte
-	SubscriptionStroke [5]byte
+	SubscriptionMoney [8]types.Bcd
+	SubscriptionNumber [8]types.Bcd
+	SubscriptionStroke [5]types.Bcd
 
-	SaleMoney [8]byte
-	SaleNumber [8]byte
-	SaleStroke [5]byte
+	SaleMoney [8]types.Bcd
+	SaleNumber [8]types.Bcd
+	SaleStroke [5]types.Bcd
 }
 

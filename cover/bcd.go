@@ -1,13 +1,16 @@
 package cover
 
-import "strconv"
+import (
+    "strconv"
+    "github.com/lwl1989/data-cover/types"
+)
 
 
-func BcdToString(b []byte) string {
+func BcdToString(b []types.Bcd) string {
 	return string(b[:])
 }
 
-func BcdToInt(b []byte) int  {
+func BcdToInt(b []types.Bcd) int  {
 	n,err := strconv.Atoi(BcdToString(b))
 	if err == nil {
 		return n

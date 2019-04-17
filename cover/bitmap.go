@@ -1,8 +1,9 @@
 package cover
 
+import "github.com/lwl1989/data-cover/types"
 
 //通过偏移量计算出值
-func BitMapGetValue(b [1]byte, offset uint, len uint) int8 {
+func BitMapGetValue(b [1]types.BitMap, offset uint, len uint) int8 {
     deflection := 8 - offset - len
 
     i := int8(b[0])

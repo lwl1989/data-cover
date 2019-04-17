@@ -1,5 +1,7 @@
 package data
 
+import "github.com/lwl1989/data-cover/types"
+
 //header  cate 01  code 01  edition 07
 type StockReceiver1 struct {
 	ContentBody
@@ -9,44 +11,44 @@ type StockReceiver1 struct {
 
 
 type ContentBody struct {   //47 byte
-	Content [47]byte    //ASCII
-	StockCode [6]byte
-	StockName [16]byte
-	StockCate [2]byte
-	StockBondCate [2]byte
-	StockNumFlag [2]byte
+	Content [47]types.Ascii    //ASCII
+	StockCode [6]types.Ascii
+	StockName [16]types.Ascii
+	StockCate [2]types.Ascii
+	StockBondCate [2]types.Ascii
+	StockNumFlag [2]types.Ascii
 
-	StockExCode [1]byte //bcd
-	TodayPrice  [3]byte
-	UpPrice     [3]byte
-	DownPrice   [3]byte
+	StockExCode [1]types.Bcd //bcd
+	TodayPrice  [3]types.Bcd
+	UpPrice     [3]types.Bcd
+	DownPrice   [3]types.Bcd
 
-	NotTenFlag [1]byte  //ASCII
-	ExFlag  [1]byte
-	SpecFlag [1]byte
-	SpecExFlag [1]byte
-	NotFlatFinancingStock [1]byte
-	NotFlatBorrowStock [1]byte
+	NotTenFlag [1]types.Ascii  //ASCII
+	ExFlag  [1]types.Ascii
+	SpecFlag [1]types.Ascii
+	SpecExFlag [1]types.Ascii
+	NotFlatFinancingStock [1]types.Ascii
+	NotFlatBorrowStock [1]types.Ascii
 }
 
 type WarrantData struct {
-	WarrantCode [1]byte  //ASCII
+	WarrantCode [1]types.Ascii  //ASCII
 
-	PerformancePrice [4]byte  //bcd
-	YesterdayPerformanceNumber [5]byte
-	YesterdayLostNumber [5]byte
-	SurplusNumber [5]byte  //发行余量
-	ExerciseRatio [4]byte  //行使比率
-	MaxPrice	[4]byte
-	MinPrice	[4]byte
-	ExpireDay	[4]byte
+	PerformancePrice [4]types.Bcd  //bcd
+	YesterdayPerformanceNumber [5]types.Bcd
+	YesterdayLostNumber [5]types.Bcd
+	SurplusNumber [5]types.Bcd  //发行余量
+	ExerciseRatio [4]types.Bcd  //行使比率
+	MaxPrice	[4]types.Bcd
+	MinPrice	[4]types.Bcd
+	ExpireDay	[4]types.Bcd
 }
 
 type ContentOther struct {  //7
-	ForeignStockCode [1]byte//ascii
+	ForeignStockCode [1]types.Ascii//ascii
 
-	TradingUnit  [3]byte  //bcd
+	TradingUnit  [3]types.Bcd  //bcd
 
-	TradingCurrencyCode [3]byte //ascii
+	TradingCurrencyCode [3]types.Ascii //ascii
 
 }
