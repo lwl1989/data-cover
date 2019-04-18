@@ -1,16 +1,17 @@
 package data
 
+import "github.com/lwl1989/data-cover/types"
 
 //header  cate 01  code 13  edition 02
 type StockReceiver13 struct {
-	StockCode [6]byte  // Ascii
+	StockCode [6]types.Ascii  // Ascii
 
-	MatchTime  [3]byte //bcd
+	MatchTime  [3]types.Bcd //bcd
 
-	UpDownFlag [1]byte //bit map
+	UpDownFlag [1]types.BitMap //bit map
 
-	DealPrice [3]byte //bcd
-	DealNumber [6]byte
-	BuyPrice   [3]byte
-	SellPrice  [3]byte
+	DealPrice [3]types.Bcd //bcd
+	DealNumber [6]types.Bcd
+	BuyPrice   [3]types.Bcd
+	SellPrice  [3]types.Bcd
 }

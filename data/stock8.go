@@ -1,36 +1,38 @@
 package data
 
+import "github.com/lwl1989/data-cover/types"
+
 //header  cate 01 code 08  edition 01
 type StockReceiver8 struct {
-	EntrustTime [3]byte
+	EntrustTime [3]types.Ascii
 
-	EntrustBuyStroke [4]byte
-	EntrustSellStroke [4]byte
-	EntrustBuyNumber [4]byte
-	EnTrustSellNumber [4]byte
+	EntrustBuyStroke [4]types.Bcd
+	EntrustSellStroke [4]types.Bcd
+	EntrustBuyNumber [4]types.Bcd
+	EnTrustSellNumber [4]types.Bcd
 
-	FundEntrustBuyStroke [4]byte
-	FundEntrustSellStroke [4]byte
-	FundEntrustBuyNumber [4]byte
-	FundEntrustSellNumber [4]byte
+	FundEntrustBuyStroke [4]types.Bcd
+	FundEntrustSellStroke [4]types.Bcd
+	FundEntrustBuyNumber [4]types.Bcd
+	FundEntrustSellNumber [4]types.Bcd
 
-	AllUpEntrustBuyStroke [4]byte
-	AllUpEntrustSellStroke [4]byte
-	AllUpEntrustBuyNumber [4]byte
-	AllUpEnTrustSellNumber [4]byte
+	AllUpEntrustBuyStroke [4]types.Bcd
+	AllUpEntrustSellStroke [4]types.Bcd
+	AllUpEntrustBuyNumber [4]types.Bcd
+	AllUpEnTrustSellNumber [4]types.Bcd
 
-	AllDownEntrustBuyStroke [4]byte
-	AllDownEntrustSellStroke [4]byte
-	AllDownEntrustBuyNumber [4]byte
-	AllDownEnTrustSellNumber [4]byte
+	AllDownEntrustBuyStroke [4]types.Bcd
+	AllDownEntrustSellStroke [4]types.Bcd
+	AllDownEntrustBuyNumber [4]types.Bcd
+	AllDownEnTrustSellNumber [4]types.Bcd
 
-	FundUpEntrustBuyStroke [4]byte
-	FundUpEntrustSellStroke [4]byte
-	FundUpEntrustBuyNumber [4]byte
-	FundUpEntrustSellNumber [4]byte
+	FundUpEntrustBuyStroke [4]types.Bcd
+	FundUpEntrustSellStroke [4]types.Bcd
+	FundUpEntrustBuyNumber [4]types.Bcd
+	FundUpEntrustSellNumber [4]types.Bcd
 
-	FundDownEntrustBuyStroke [4]byte
-	FundDownEntrustSellStroke [4]byte
-	FundDownEntrustBuyNumber [4]byte
-	FundDownEntrustSellNumber [4]byte
+	FundDownEntrustBuyStroke [4]types.Bcd
+	FundDownEntrustSellStroke [4]types.Bcd
+	FundDownEntrustBuyNumber [4]types.Bcd
+	FundDownEntrustSellNumber [4]types.Bcd
 }
