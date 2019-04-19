@@ -82,18 +82,37 @@ func filechange(watcher *fsnotify.Watcher){
         select {
         case event, ok := <-watcher.Events:
             if !ok {
+                //todo: send error
                 return
             }
-            switch event {
-                //todo:  create or modify
-                //1. build struct
-                //2. send
+
+            switch event.Op {
+                case fsnotify.Create:
+                case fsnotify.Write:
+                    fallthrough
+                case fsnotify.Remove:
+
+                case fsnotify.Rename:
+                    // not do any thing
+                case fsnotify.Chmod:
+                    // not do any thing
+                default:
+                 //todo: send error
             }
+            //Create Op = 1 << iota
+            //Write
+            //Remove
+            //Rename
+            //Chmod
+            // 001  010  011 100 101
+            // 001&001 = 001
+
             //log.Println("event:", event)
             //if event.Op&fsnotify.Write == fsnotify.Write {
             //    log.Println("modified file:", event.Name)
             //}
         case err, ok := <-watcher.Errors:
+            //todo: send error
             if !ok {
                 return
             }
