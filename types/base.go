@@ -8,5 +8,3 @@ type Bcd    byte
 type X byte
 type N9 byte
 type Char byte
-
-

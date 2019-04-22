@@ -91,7 +91,7 @@ func filechange(watcher *fsnotify.Watcher){
                 case fsnotify.Write:
                     fallthrough
                 case fsnotify.Remove:
-
+                    f.Receive(event.Name)
                 case fsnotify.Rename:
                     // not do any thing
                 case fsnotify.Chmod:
