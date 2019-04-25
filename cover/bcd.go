@@ -7,7 +7,11 @@ import (
 
 
 func BcdToString(b []types.Bcd) string {
-	return string(b[:])
+    bt:=make([]byte, len(b))
+    for k,v := range b {
+        bt[k] = byte(v)
+    }
+    return string(bt[:])
 }
 
 func BcdToInt(b []types.Bcd) int  {
